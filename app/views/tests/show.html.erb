@@ -1,0 +1,219 @@
+﻿<style type="text/css">
+ <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application"%>
+  
+  <%= csrf_meta_tags %>
+<body>
+
+<%= yield %>
+
+</body>
+
+#left, #center, #right {border:#CCC 1px solid; padding:10px 20px;}
+
+
+#left {float:left; width:250px;}
+
+
+#right {float:right; width:350px;}
+
+
+#center {float:left; margin:5px; width:800px;}
+
+TD{font-family: Arial; font-size: 10pt;}
+
+</style>
+
+
+
+<!doctype html>
+<head>
+    <meta charset="utf-8" />
+    <title>PT - test Results</title>
+    
+	
+    <script>
+    $(function() {
+        $( "#tabs" ).tabs();
+    });
+    </script>
+</head>
+ 
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>PT - Personal card</title>
+    
+    <script type="text/javascript" charset="utf-8">  
+	
+    $(function() {
+        $( "#datepicker" ).datepicker();
+    });
+    </script>
+	
+	<style>
+    .column { width: 450px; float: left; }
+    .portlet { margin: 0 1em 1em 0; }
+    .portlet-header { margin: 0.3em; padding-bottom: 4px; padding-left: 0.2em;background:#00 }
+    .portlet-header .ui-icon { float: right; }
+    .portlet-content { padding: 0.4em; }
+    .ui-sortable-placeholder { border: 1px dotted black; visibility: visible !important; height: 20px !important; }
+    .ui-sortable-placeholder * { visibility: hidden; }
+    </style>
+	
+  
+	
+
+</head>
+<body>
+
+<div id="left">
+<td><%= link_to 'Back',monter_path(@monter)%></td>
+
+
+
+</div>
+
+<div id="center">
+	
+<div id="tabs">  
+  <div class="header">
+    <center><h2>Государственная компания "Moldelectrica"</h2></center>
+	<center><h3>Отдел кадров и социального развития.</h3></center>
+	<br>
+	<center> Филиал	:	<%=@monter.branch %></center>
+	<center> Фамилия :	<%=@monter.surname %></center>
+	<center> Имя : 	<%=@monter.name %></center>
+	<center> Дата рождения : 	<%=@monter.bdate %></center>
+	<center>Дата тестирования: 	<%= @test.date %></center><br>
+  </div>
+   
+	<div id="tabs-1">
+	<div style="font-size: 14px;  font: Areal">
+	<div class="header">	
+    
+	<div style="color : #00CCCC">
+    
+	</div><br>
+	<center><h3>Заключение </h3></center>
+	<center><strong>о профессиональной пригодности</strong></center> <br>
+	<br>
+	
+	<strong>(<%= @test.ib %>)
+	<%= @test.tkat %></strong><br>
+	<br>
+	<center><strong>Основания для заключения</strong></center> 	<br>
+	<p>
+	(<%= @test.b1 %>)
+	<%= @test.tb1 %><br><br>
+	(<%= @test.b2 %>)
+	<%= @test.tb2 %><br><br>
+	(<%= @test.b3 %>)
+	<%= @test.tb3 %>
+	</p>
+	</div>
+	<br><br>	
+	<br>
+	</div>
+    </div>
+	
+	
+<!--	<div id="tabs-2">
+	<div class="header">
+	
+	<strong>Список вторичных характеристик, выдаваемых тестами.</strong>
+ 
+		<div class="portlet">
+        <div class="portlet-header"><strong>Test 1</strong></div>
+        <div class="portlet-content">Восприятие сходства плоскотное : <%= @test.rawbal1 %></div>
+		<div class="portlet-content">Точность переработки информации : <%= @test.rawbal2 %></div>
+		<div class="portlet-content">Скорость переработки информации : <%= @test.rawbal3 %></div>
+		</div>
+ 
+		<div class="portlet">
+        <div class="portlet-header"><strong>Test 2</strong></div>
+        <div class="portlet-content">Пространственное мышление : <%= @test.rawbal4 %></div>
+		<div class="portlet-content">Точность переработки информации : <%= @test.rawbal5 %></div>
+		<div class="portlet-content">Скорость переработки информации : <%= @test.rawbal6 %></div>
+		</div>
+		
+		<div class="portlet">
+        <div class="portlet-header"><strong>Test 3</strong></div>
+        <div class="portlet-content"> Логическое мышление : <%=@test.rawbal7 %></div>
+		<div class= "portlet-content">Точность переработки информации : <%=@test.rawbal8 %></div>
+		<div class="portlet-content">Скорость переработки информации : <%=@test.rawbal9 %></div>
+		</div>
+		
+		<div class="portlet">
+        <div class="portlet-header"><strong>Test 4</strong></div>
+        <div class="portlet-content">Техническое мышление : <%=@test.rawbal10 %></div>
+		<div class="portlet-content">Точность переработки информации : <%=@test.rawbal11 %></div>
+		<div class="portlet-content">Скорость переработки информации : <%=@test.rawbal12 %></div>
+		</div>
+		
+		<div class="portlet">
+        <div class="portlet-header"><strong>Test 5</strong></div>
+        <div class="portlet-content">Сила возбуждения : <%=@test.rawbal13 %></div>
+		<div class="portlet-content">Сила торможения : <%=@test.rawbal14 %></div>
+		<div class="portlet-content">Подвижность нервная : <%=@test.rawbal15 %></div>
+		<div class="portlet-content">Уравновешенность : <%=@test.rawbal16 %></div>
+		</div>
+		
+		<div class="portlet">
+        <div class="portlet-header"><strong>Test 6</strong></div>
+        <div class="portlet-content">Гипертимность : <%=@test.rawbal17 %></div>
+		<div class="portlet-content">Возбудимость : <%=@test.rawbal18 %></div>
+		<div class="portlet-content">Эмотивность : <%=@test.rawbal19 %></div>
+		<div class="portlet-content">Педантичность : <%=@test.rawbal20 %></div>
+		<div class="portlet-content">Тревожность : <%=@test.rawbal21 %></div>
+		<div class="portlet-content">Циклотимичность : <%=@test.rawbal22 %></div>
+		<div class="portlet-content">Демонстративность : <%=@test.rawbal23 %></div>
+		<div class="portlet-content">Неуравновешенность : <%=@test.rawbal24 %></div>
+		<div class="portlet-content">Дистимность : <%=@test.rawbal24 %></div>
+		<div class="portlet-content">Экзальтированость : <%=@test.rawbal25 %></div>
+		</div>
+		
+		<div class="portlet">
+        <div class="portlet-header"><strong>Test 7</strong></div>
+        <div class="portlet-content">Склонность к риску : <%=@test.rawbal26 %></div>
+		</div>
+		
+		<div class="portlet">
+        <div class="portlet-header"><strong>Test 8</strong></div>
+        <div class="portlet-content">Мотивация к самозащите : <%=@test.rawbal27 %></div>
+		</div>
+		
+		<div class="portlet">
+        <div class="portlet-header"><strong>Test 9</strong></div>
+        <div class="portlet-content">Мотивация достижений : <%=@test.rawbal28 %></div>
+	  </div>	
+	  </div>
+	</div>
+	
+	<div class="footer">
+    <strong>TEST 1 : </strong>
+	<%=  @test.test1 %><br>
+	<strong>TEST 2 : </strong>
+	<%= @test.test2 %><br>
+	<strong>TEST 3 : </strong>
+	<%= @test.test3 %><br>
+	<strong>TEST 4 : </strong>
+	<%= @test.test4 %><br>
+	<strong>TEST 5 : </strong>
+	<%= @test.test5 %><br>
+	<strong>TEST 6 : </strong>
+	<%= @test.test6 %><br>
+	<strong>TEST 7 : </strong>
+	<%= @test.test7 %><br>
+	<strong>TEST 8 : </strong>
+	<%= @test.test8 %><br>
+	<strong>TEST 9 : </strong>
+	<%= @test.test9 %>
+	</div>
+   
+ -->
+  
+  </body>
+</html>
+  
+  

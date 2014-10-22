@@ -1,0 +1,251 @@
+﻿</div>
+
+<%k = 0%>
+	<%  ma = Array.new()  %>
+	<%  ma1 = Array.new()  %>
+	<%  ma2 = Array.new()  %>
+	<%  ma3 = Array.new()  %>
+<%  @monter.tests.each do |test| %>
+	<%  ma[k] = test.ib  %>
+	<%  ma1[k] = test.b1  %>
+	<%  ma2[k] = test.b2  %>
+	<%  ma3[k] = test.b3  %>
+	<%  k = k + 1  %>
+	
+<%	end	 %>
+
+<script type="text/javascript" charset="utf-8">
+
+	  $(function() {
+        new Highcharts.Chart({
+			chart: {
+			renderTo: "center"
+			},
+			title: {
+					text: "График изменения психопараметров респондента"
+					},
+			xAxis: {
+					type: "integer"
+					},
+			yAxis: {
+					title: {
+							text: "Ball"
+							}
+					},
+	
+			legend: {
+                layout: 'vertical',
+                align: 'center',
+                verticalAlign: 'bottom'
+				    },
+			series: [{ name: "Итоговый Бал",
+						pointInterval: <%= 1 %>,
+						pointStart: <%= 1 %>,
+						data: [<%= ma.map(&:to_i).join(", ") %>]
+					  },
+					  {
+					    name: "Психическая Выносливость",
+						pointInterval: <%= 1 %>,
+						pointStart: <%= 1 %>,
+						data: [<%= ma1.map(&:to_i).join(", ") %>]
+					  },
+					  {
+					    name: "Логическое Мышление",
+						pointInterval: <%= 1 %>,
+						pointStart: <%= 1 %>,
+						data: [<%= ma2.map(&:to_i).join(", ") %>]
+					  },
+					  {
+						name: "Эмоциональная Устойчивость",
+						pointInterval: <%= 1%>,
+						pointStart: <%= 1 %>,
+						data: [<%= ma3.map(&:to_i).join(", ") %>]
+					  }
+					  ]							
+		})
+        })
+		
+		
+    </script>
+
+
+
+<html>
+<head>
+	<meta charset="windows-1251">
+	<title>Профиль</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+
+  
+<body>
+<%= link_to 'Back to Respondents list', monters_path %>
+	<div class="all">
+		<div class="header">
+			<strong>Личная карточка респондента</strong>
+		</div>
+		<div class="center">
+			
+			<strong>Tests</strong><br>
+			<%= link_to 'Add testing', new_monter_test_path(@monter) %><br>
+			<%= render @monter.tests=%>
+			<div id="center"> </div>
+		</div>
+		<div class="left">
+		<div style="font-size: 16px;  font: Areal">
+			<h2>Respondent</h2>
+			<p>
+				<strong>Company:</strong>
+				<div style="color : #00CCCC">
+				<%= @monter.company %>
+				</div>
+			</p>
+ 
+			<p>
+				<strong>Branch:</strong>
+				<div style="color : #00CCCC">
+				<%= @monter.branch %>
+				</div>
+			</p>
+
+			<p>
+				<strong>Name:</strong>
+				<div style="color : #00CCCC">
+				<%= @monter.name %>
+				</div>
+			</p>
+
+			<p>
+				<strong>Surname:</strong>
+				<div style="color : #00CCCC">
+				<%= @monter.surname %>
+				</div>
+			</p>
+
+			<p>
+				<strong>Birthday date:</strong>
+				<div style="color : #00CCCC">
+				<%= @monter.bdate %>
+				</div>
+			</p>
+
+			<p>
+				<strong>Role:</strong>
+				<div style="color : #00CCCC">
+				<%= @monter.dolj %>
+				</div>
+			</p>
+			
+			
+			
+		</div>	
+		</div>
+		<div class="right">
+			<div style="font-size: 16px; FONT-WEIGHT: bolder; font: Tahoma">
+			
+			<strong>Add a Testing:</strong>
+			<%= render "tests/form" %>
+			</div>
+		</div>
+		<div class="footer">
+			<%= link_to 'Edit Respondent', edit_monter_path(@monter) %> |
+			<%= link_to 'Back to Respondents list', monters_path %>
+		</div>
+		
+	</div>
+</body>
+</html>
+
+
+
+		
+		
+   
+		
+   
+
+
+
+
+<!-- <% @monter.tests.each do |test| %>
+ <p>
+    <strong>Date:</strong>
+    <%= test.date %>
+  </p>
+ 
+  <p>
+    <strong>Test 1:</strong>
+    <%= test.test1 %>
+  </p>   
+<% end %> -->
+
+
+
+
+
+<!--  <%= form_for([@monter, @monter.tests.build]) do |f| %>
+  <p>
+    <%= f.label :date %><br />
+    <%= f.text_field :date %>
+  </p>
+  <p>
+    <%= f.label :test1 %><br />
+    <%= f.text_area :test1 %>
+  </p>
+  
+  <p>
+    <%= f.label :test2 %><br />
+    <%= f.text_area :test2 %>
+  </p>
+  
+  <p>
+    <%= f.label :test3 %><br />
+    <%= f.text_area :test3 %>
+  </p>
+  
+  <p>
+    <%= f.label :test4 %><br />
+    <%= f.text_area :test4 %>
+  </p>
+  
+  <p>
+    <%= f.label :test5 %><br />
+    <%= f.text_area :test5 %>
+  </p>
+  
+  <p>
+    <%= f.label :test6 %><br />
+    <%= f.text_area :test6 %>
+  </p>
+  
+  <p>
+    <%= f.label :test7 %><br />
+    <%= f.text_area :test7 %>
+  </p>
+  
+  <p>
+    <%= f.label :test8 %><br />
+    <%= f.text_area :test8 %>
+  </p>
+  
+  <p>
+    <%= f.label :test9 %><br />
+    <%= f.text_area :test9 %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>   -->
+ 
+
+
+
+
+
+
+
+
+
+
+

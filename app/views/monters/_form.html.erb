@@ -1,0 +1,14 @@
+<%= form_for([@monter, @monter.tests.build]) do |f| %>
+  <p>
+    <%= f.label :date %><br />
+    <%= f.text_field :date %>
+  </p>
+  <p>
+    <%= f.label :test1 %><br />
+    <%= f.text_field :test1 %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

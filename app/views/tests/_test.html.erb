@@ -1,0 +1,69 @@
+﻿<div>
+ 
+ 
+ <table id='TEST' BORDER=1 CELLSPACING=1 CELLPADDING=0 ALIGN=CENTER> 
+ 
+
+				
+				<th>Testing date:</th>
+				<th>ИБ:</th>
+				<th>ПВ:</th>
+				<th>ЛМ:</th>
+				<th>ЭУ:</th>
+
+				
+  
+  
+  <tr>  
+	  
+	  
+      <td><%= test.date %></td>
+	  <td><%= test.ib %></td>
+      <td><%= test.b1 %></td>
+	  <td><%= test.b2 %></td>
+	  <td><%= test.b3 %></td>
+	  
+    <td><%= link_to 'Show',[test.monter, test],:action=>:show %></td>
+    <td><%= link_to 'Edit' ,[:edit,test.monter, test] %></td>
+	<td><%= link_to 'Calc',[test.monter, test],:action=>:show %></td>
+	<td><%= link_to 'Destroy Test', [test.monter, test],
+               :confirm => 'Are you sure?',
+               :method => :delete %></td>		   
+  </tr>
+  
+
+</table>
+</div>
+
+<!--
+
+<p>
+  <strong>Testing date:</strong>
+  <%= test.date %>
+</p>
+ 
+<p>
+  <strong>Test 1:</strong>
+  <%= test.b1 %>
+</p>
+
+<p>
+  <strong>Test 1:</strong>
+  <%= test.b2 %>
+</p>
+
+<p>
+  <strong>Test 1:</strong>
+  <%= test.b3 %>
+</p>
+
+<p>
+  <%= link_to 'Destroy Test', [test.monter, test],
+               :confirm => 'Are you sure?',
+               :method => :delete %>
+</p>
+
+-->
+
+
+

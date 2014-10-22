@@ -1,0 +1,43 @@
+class AddRBtoTest < ActiveRecord::Migration
+  def change
+	add_column :tests, :rawbal1, :string
+	add_column :tests, :rawbal2, :string
+	add_column :tests, :rawbal3, :string
+	add_column :tests, :rawbal4, :string
+	add_column :tests, :rawbal5, :string
+	add_column :tests, :rawbal6, :string
+	add_column :tests, :rawbal7, :string
+	add_column :tests, :rawbal8, :string
+	add_column :tests, :rawbal9, :string
+	add_column :tests, :rawbal10, :string
+	add_column :tests, :rawbal11, :string
+	add_column :tests, :rawbal12, :string
+	add_column :tests, :rawbal13, :string
+	add_column :tests, :rawbal14, :string
+	add_column :tests, :rawbal15, :string
+	add_column :tests, :rawbal16, :string
+	add_column :tests, :rawbal17, :string
+	add_column :tests, :rawbal18, :string
+	add_column :tests, :rawbal19, :string
+	add_column :tests, :rawbal20, :string
+	add_column :tests, :rawbal21, :string
+	add_column :tests, :rawbal22, :string
+	add_column :tests, :rawbal23, :string
+	add_column :tests, :rawbal24, :string
+	add_column :tests, :rawbal25, :string
+	add_column :tests, :rawbal26, :string
+	add_column :tests, :rawbal27, :string
+	add_column :tests, :rawbal28, :string
+	add_column :tests, :sum1, :string
+	add_column :tests, :sum2, :string
+	add_column :tests, :b1, :string
+	add_column :tests, :b2, :string
+	add_column :tests, :b3, :string
+	add_column :tests, :tb1, :string
+	add_column :tests, :tb2, :string
+	add_column :tests, :tb3, :string
+	add_column :tests, :ib, :string
+	add_column :tests, :kat, :string
+	add_column :tests, :tkat, :string
+  end
+end

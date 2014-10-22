@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  company: MyString
+  branch: MyString
+  name: MyString
+  surname: MyString
+  bdate: 
+  dolj: MyString
+  staj: 1
+
+two:
+  company: MyString
+  branch: MyString
+  name: MyString
+  surname: MyString
+  bdate: 
+  dolj: MyString
+  staj: 1

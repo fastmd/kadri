@@ -1,0 +1,59 @@
+
+
+  
+
+
+<%= form_for([@monter, @monter.tests.build]) do |f| %>
+
+	<% if @monter.errors.any? %>
+  <div id="errorExplanation">
+    <h2><%= pluralize(@monter.errors.count, "error") %> prohibited this monter from being saved:</h2>
+    <ul>
+    <% @monter.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+
+
+  <p>
+    
+    <%= f.label :date %><br >
+	<%= f.text_field :date,:value => Time.now.strftime('%d.%m.%Y') %> <br>
+ 
+    <%= f.label :test1 %><br>
+    <%= f.text_area :test1, :rows => 3, :style=>"width:80%" %><br>
+  
+    <%= f.label :test2 %><br>
+    <%= f.text_area :test2, :rows => 3, :style=>"width:80%" %><br>
+  
+    <%= f.label :test3 %><br>
+    <%= f.text_area :test3, :rows => 3, :style=>"width:80%" %><br>
+  
+    <%= f.label :test4 %><br>
+    <%= f.text_area :test4, :rows => 3, :style=>"width:80%" %><br>
+
+    <%= f.label :test5 %><br>
+    <%= f.text_area :test5, :rows => 3, :style=>"width:80%" %><br>
+  
+    <%= f.label :test6 %><br>
+    <%= f.text_area :test6, :rows => 3, :style=>"width:80%" %><br>
+  
+    <%= f.label :test7 %><br>
+    <%= f.text_area :test7 ,:rows => 3, :style=>"width:80%"%><br>
+  
+    <%= f.label :test8 %><br>
+    <%= f.text_area :test8,:rows => 3, :style=>"width:80%"%><br>
+  
+    <%= f.label :test9 %><br>
+	<%= f.text_area :test9,  :rows =>3 , :style=>"width:80%" %><br>
+  </p>
+  
+ 
+  
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

@@ -1,0 +1,43 @@
+<%= link_to 'Back', :action => :index %>
+  
+	<h2>Respondent's Data</h2>
+<%= form_for :monter, :url => { :action => :create } do |f| %>  
+
+  <p>
+    <%= f.label :Company %><br>
+    <%= f.select :company, options_for_select([["ME", "ME"]]) %>
+  </p>
+ 
+  <p>
+    <%= f.label :Branch %><br>
+    <%= f.select :branch, options_for_select([["NORD-VEST", "NORD-VEST"], ["NORD", "NORD"], ["CENTRU", "CENTRU"], ["SUD", "SUD"]]) %><br>
+  </p>
+  
+  <p>
+    <%= f.label :Name %><br>
+    <%= f.text_field :name %>
+  </p>
+  
+  <p>
+    <%= f.label :Surname %><br>
+    <%= f.text_field :surname %>
+  </p>
+  
+  <p>
+    <%= f.label :"Birthday data"%><br>
+    <%= f.text_field :bdate %>
+  </p>
+  
+  <p>
+    <%= f.label :Role %><br>
+    <%= f.text_field :dolj %>
+  </p>
+ 
+  <p>
+    <%= f.submit("Save Respondent") %>
+  </p>
+  
+<% end %>
+
+
+

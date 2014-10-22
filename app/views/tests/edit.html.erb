@@ -1,0 +1,465 @@
+﻿<style type="text/css">
+ <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application"%>
+  
+  <%= csrf_meta_tags %>
+<body>
+
+<%= yield %>
+
+</body>
+
+
+
+#left, #center, #right {border:#CCC 1px solid; padding:10px 20px;}
+
+
+#left {float:left; width:250px;}
+
+
+#right {float:right; width:350px;}
+
+
+#center {float:left; margin:5px; width:800px;}
+
+TD{font-family: Arial; font-size: 10pt;}
+
+</style>
+
+
+
+<!doctype html>
+<head>
+    <meta charset="utf-8" />
+    <title>PT - test Results</title>
+    
+	
+    <script>
+    $(function() {
+        $( "#tabs" ).tabs();
+    });
+    </script>
+</head>
+ 
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>PT - Personal card</title>
+    
+    <script type="text/javascript" charset="utf-8">  
+	
+    $(function() {
+        $( "#datepicker" ).datepicker();
+    });
+    </script>
+	
+	<style>
+    .column { width: 450px; float: left; }
+    .portlet { margin: 0 1em 1em 0; }
+    .portlet-header { margin: 0.3em; padding-bottom: 4px; padding-left: 0.2em;background:#00 }
+    .portlet-header .ui-icon { float: right; }
+    .portlet-content { padding: 0.4em; }
+    .ui-sortable-placeholder { border: 1px dotted black; visibility: visible !important; height: 20px !important; }
+    .ui-sortable-placeholder * { visibility: hidden; }
+    </style>
+	
+  
+	
+
+</head>
+<body>
+
+<div id="left">
+<td><%= link_to 'Back',monter_path(@monter)%></td>
+</div>
+
+<div id="center">
+
+
+
+</div>
+
+	<div id="tabs-3">
+    <%= form_for :test, :url => { :action => :update, :id => @test.id },
+			:method => :put do |f| %>
+	 <!-- <%= f.select :test1, options_for_select([['Mare'], ['Stallion'], ['Gelding']], :selected => :test1) %> --> 
+	<% a = ""%>		
+
+<div id="tabs">  
+	<TABLE border="1"
+          summary="This table gives some statistics about fruit
+                   flies: average height and weight, and percentage
+                   with red eyes (for both males and females).">
+		<CAPTION><EM>A test table with merged cells</EM></CAPTION>
+		<TR><TH rowspan="2"><TH colspan="2">Тест 1
+    	
+		<TR><TH>0<TH>1<TH>2<TH>3<TH>4<TH>5<TH>6<TH>7<TH>8<TH>9
+		<TR><TH>0<TD><TD><%=select_tag(@test.test1, options_for_select([0,'+','-']))%> 
+			<TD><%=select_tag(@test.test1, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.test1, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>	
+		<TR><TH>1<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>	
+		<TR><TH>2<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>	
+		<TR><TH>3<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+		<TR><TH>4<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+		<TR><TH>5<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>					
+				
+		<TR><TH rowspan="2"><TH colspan="2">Тест 2
+    	
+		<TR><TH>0<TH>1<TH>2<TH>3<TH>4<TH>5<TH>6<TH>7<TH>8<TH>9
+		<TR><TH>0<TD><TD><%=select_tag(@test.tkat, options_for_select([0,'а','б','в','г','д']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'а','б','в','г','д']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'а','б','в','г','д']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'а','б','в','г','д']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'а','б','в','г','д']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'а','б','в','г','д']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'а','б','в','г','д']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'а','б','в','г','д']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'а','б','в','г','д']))%>	
+		<TR><TH>1<TD><%=select_tag(@test.tkat, options_for_select([0,'а','б','в','г','д']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'а','б','в','г','д']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'а','б','в','г','д']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'а','б','в','г','д']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'а','б','в','г','д']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'а','б','в','г','д']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'а','б','в','г','д']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'а','б','в','г','д']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'а','б','в','г','д']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'а','б','в','г','д']))%>
+		<TR><TH>2<TD><%=select_tag(@test.tkat, options_for_select([0,'а','б','в','г','д']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'а','б','в','г','д']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'а','б','в','г','д']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'а','б','в','г','д']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'а','б','в','г','д']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'а','б','в','г','д']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'а','б','в','г','д']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'а','б','в','г','д']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'а','б','в','г','д']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'а','б','в','г','д']))%>	
+		<TR><TH>3<TD><%=select_tag(@test.tkat, options_for_select([0,'а','б','в','г','д']))%>					
+	
+		<TR><TH rowspan="2"><TH colspan="2">Тест 3
+    	
+		<TR><TH>0<TH>1<TH>2<TH>3<TH>4<TH>5<TH>6<TH>7<TH>8<TH>9
+		<TR><TH>0<TD><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%>
+		<TR><TH>1<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%>
+		<TR><TH>2<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%>
+		<TR><TH>3<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%>
+		<TR><TH>4<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%>
+		<TR><TH>5<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%>				
+		<TR><TH>6<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3,4,5,6,7,8]))%>
+					
+				
+		<TR><TH rowspan="2"><TH colspan="2">Тест 4
+    	
+		<TR><TH>0<TH>1<TH>2<TH>3<TH>4<TH>5<TH>6<TH>7<TH>8<TH>9
+		<TR><TH>0<TD><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>	
+		<TR><TH>1<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>
+		<TR><TH>2<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>
+		<TR><TH>3<TD><%=select_tag(@test.tkat, options_for_select([0.1,2,3]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>				
+		<TR><TH>4<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>
+		<TR><TH>5<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>
+		<TR><TH>6<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%><TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>
+		<TR><TH>7<TD><%=select_tag(@test.tkat, options_for_select([0,1,2,3]))%>
+									
+				
+		<TR><TH rowspan="2"><TH colspan="2">Тест 5
+    	
+		<TR><TH>0<TH>1<TH>2<TH>3<TH>4<TH>5<TH>6<TH>7<TH>8<TH>9
+		<TR><TH>0<TD><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>		
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+		<TR><TH>1<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>		
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>						
+		<TR><TH>2<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>		
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+		<TR><TH>3<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>		
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+		<TR><TH>4<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>		
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+		<TR><TH>5<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>		
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+		<TR><TH>6<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>		
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+		<TR><TH>7<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>		
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+		<TR><TH>8<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>		
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+		<TR><TH>9<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>		
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+		<TR><TH>10<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>		
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+		<TR><TH>11<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>		
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+		<TR><TH>12<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>		
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>						
+		<TR><TH>13<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>		
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+																			
+						
+		<TR><TH rowspan="2"><TH colspan="2">Тест 6
+    	
+		<TR><TH>0<TH>1<TH>2<TH>3<TH>4<TH>5<TH>6<TH>7<TH>8<TH>9
+		<TR><TH>0<TD><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>	
+		<TR><TH>1<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>	
+		<TR><TH>2<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>	
+		<TR><TH>3<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>	
+		<TR><TH>4<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>	
+		<TR><TH>5<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>	
+		<TR><TH>6<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>	
+		<TR><TH>7<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>	
+		<TR><TH>8<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			
+																
+				
+		<TR><TH rowspan="2"><TH colspan="2">Тест 7
+    	
+		<TR><TH>0<TH>1<TH>2<TH>3<TH>4<TH>5<TH>6<TH>7<TH>8<TH>9
+		<TR><TH>0<TD><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			
+		<TR><TH>1<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+					
+		<TR><TH>2<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			
+		<TR><TH rowspan="2"><TH colspan="2">Тест 8
+    	
+		<TR><TH>0<TH>1<TH>2<TH>3<TH>4<TH>5<TH>6<TH>7<TH>8<TH>9
+		<TR><TH>0<TD><TD><%=select_tag(@test.tkat, options_for_select(['0','a','b','c']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'a','b','c']))%><TD><%=select_tag(@test.tkat, options_for_select(['0','a','b','c']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'a','b','c']))%><TD><%=select_tag(@test.tkat, options_for_select(['0','a','b','c']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select(['0','a','b','c']))%><TD><%=select_tag(@test.tkat, options_for_select(['0','a','b','c']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select(['0','a','b','c']))%><TD><%=select_tag(@test.tkat, options_for_select(['0','a','b','c']))%>	
+		<TR><TH>1<TD><%=select_tag(@test.tkat, options_for_select(['0','a','b','c']))%><TD><%=select_tag(@test.tkat, options_for_select(['0','a','b','c']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select(['0','a','b','c']))%><TD><%=select_tag(@test.tkat, options_for_select(['0','a','b','c']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select(['0','a','b','c']))%><TD><%=select_tag(@test.tkat, options_for_select(['0','a','b','c']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select(['0','a','b','c']))%><TD><%=select_tag(@test.tkat, options_for_select(['0','a','b','c']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select(['0','a','b','c']))%><TD><%=select_tag(@test.tkat, options_for_select(['0','a','b','c']))%>
+		<TR><TH>2<TD><%=select_tag(@test.tkat, options_for_select(['0','a','b','c']))%><TD><%=select_tag(@test.tkat, options_for_select(['0','a','b','c']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select(['0','a','b','c']))%><TD><%=select_tag(@test.tkat, options_for_select(['0','a','b','c']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select(['0','a','b','c']))%><TD><%=select_tag(@test.tkat, options_for_select(['0','a','b','c']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select(['0','a','b','c']))%><TD><%=select_tag(@test.tkat, options_for_select(['0','a','b','c']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select(['0','a','b','c']))%><TD><%=select_tag(@test.tkat, options_for_select(['0','a','b','c']))%>	
+		<TR><TH>3<TD><%=select_tag(@test.tkat, options_for_select(['0','a','b','c']))%>			
+				
+		<TR><TH rowspan="2"><TH colspan="2">Тест 9
+    	
+		<TR><TH>0<TH>1<TH>2<TH>3<TH>4<TH>5<TH>6<TH>7<TH>8<TH>9
+		<TR><TH>0<TD><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+		<TR><TH>1<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+		<TR><TH>2<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+		<TR><TH>3<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+		<TR><TH>4<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+												
+	</TABLE>
+	
+	
+	<div id="tabs-1">
+    <strong>test Date:</strong>
+    <%= @test.date %><br><br>
+		
+	
+	<strong>(<%= @test.ib %>)
+	<%= @test.tkat %></strong>
+	<br><br>
+	
+	
+	(<%= @test.b1 %>)
+	<%= @test.tb1 %><br><br>
+	(<%= @test.b2 %>)
+	<%= @test.tb2 %><br><br>
+	(<%= @test.b3 %>)
+	<%= @test.tb3 %>
+	<br><br>	
+	<br>
+    </div>
+	
+	
+	
+	
+  
+  <p>
+    <%= f.label :date %><br>
+    <%= f.text_field :date %>
+  </p>
+ 
+  <p>
+    <%= f.label :Test1 %><br>
+    <%= f.text_field :test1 %>
+  </p>
+  
+ 
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+  
+<% end %>
+	</div>
+	
+    </div> 
+	
+	</div>
+  <tr> 
+  </tr>
+  
+  </body>
+</html>
+
+
+  
+  

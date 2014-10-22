@@ -1,0 +1,124 @@
+ <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application"%>   
+  <%= csrf_meta_tags %> 	
+
+
+<style type="text/css">
+/*
+ * Row highlighting table1
+ */
+
+#left, #center, #right {border:#CCC 1px solid; padding:10px 20px;}
+
+
+#left {float:left; width:250px;}
+
+
+#right {float:right; width:350px;}
+
+
+#center {margin:0 100px;}
+
+
+
+</style>
+
+<script>
+
+
+ $(document).ready(
+	function() {
+		$(document).ready(function() 
+		{
+			
+		var oTable1 =	$('#table1').dataTable({
+		"aoColumns": [
+            { "asSorting": false},
+            { "asSortable": true},
+			{ "asSortable": true},
+            { "asSortable": true  },
+            { "asSorting": false },
+			{ "asSortable": true },
+			{ "asSorting": false },
+			{ "asSorting": false },
+			{ "asSorting": false }
+					 ],
+									<!-- "sDom": 'T<"clear">lfrtip', -->
+									<!-- "oTableTools": {"sRowSelect": "single"},  -->
+									"aoColumnDefs": [],		
+									"bStateSave": true,
+									"bPaginate": true,
+									"bLengthChange": true,
+									"bInfo": true,
+									"bAutoWidth": true,
+									"sPaginationType": "full_numbers", 
+									"bJQueryUI": true   
+									} );
+				
+		$('#table1 tbody').delegate("tr", "click", rowClick);						
+		
+		});  
+		
+		var hlr = 0;   // Reference to the currently highlighted row
+
+function rowClick()
+{
+   if (hlr)
+      $("td:first", hlr).parent().children().each(function(){$(this).removeClass('markrow');});
+   hlr = this;
+   $("td:first", this).parent().children().each(function(){$(this).addClass('markrow');});
+
+   // You can pull the values out of the row here if required
+   var a = $("td:first", this).text();
+   var b = $("td:eq(1)", this).text();
+   <!-- alert("One = "+a+", Two = "+b);  -->
+}
+		} );    
+		
+</script>
+
+<%= link_to 'EXIT', :controller => :welcome %>
+
+<h1>Listing Respondents</h1>
+ <%= link_to 'New respondents', :action => :new %>
+
+ <table id="table1">
+  <thead>
+  <tr>
+    <th>Company</th>
+    <th>Branch</th>
+	<th>Name</th>
+	<th>Surname</th>
+	<th>Birthday date</th>
+	<th>Role</th>
+    <th>Action</th>
+    <th>Action</th>
+	<th>Action</th>
+  </tr>
+  </thead>
+  
+ <tbody>
+<% @monters.each do |monter| %>
+  <tr>
+      <td><%= monter.company %></td>
+      <td><%= monter.branch %></td>
+	  <td><%= monter.name %></td>
+	  <td><%= monter.surname %></td>
+	  <td><%= monter.bdate %></td>
+	  <td><%= monter.dolj %></td>
+    <td><%= link_to 'Show',:action => :show, :id => monter.id %></td>
+    <td><%= link_to 'Edit',:action => :edit, :id => monter.id %></td>
+	<td><%= link_to 'Destroy', { :action => :destroy, :id => monter.id }, :method => :delete, :confirm => 'Are you sure?' %></td>  
+  </tr>
+<% end %>
+</tbody>
+</table>   
+
+
+
+
+
+
+
+
+
