@@ -92,10 +92,10 @@ TD{font-family: Arial; font-size: 10pt;}
                    with red eyes (for both males and females).">
 		<CAPTION><EM>A test table with merged cells</EM></CAPTION>
 		<TR><TH rowspan="2"><TH colspan="2">Тест 1
-    	
+    	<% s = " "%>
 		<TR><TH>0<TH>1<TH>2<TH>3<TH>4<TH>5<TH>6<TH>7<TH>8<TH>9
-		<TR><TH>0<TD><TD><%=select_tag(@test.test1, options_for_select([0,'+','-']))%> 
-			<TD><%=select_tag(@test.test1, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.test1, options_for_select([0,'+','-']))%>
+		<TR><TH>0<TD><TD><%=select_tag(s[0], options_for_select([0,'+','-']))%> 
+			<TD><%=select_tag(s[1], options_for_select([0,'+','-']))%><TD><%=select_tag(s[2], options_for_select([0,'+','-']))%>
 			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
 			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
 			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>	
@@ -412,7 +412,9 @@ TD{font-family: Arial; font-size: 10pt;}
     <strong>test Date:</strong>
     <%= @test.date %><br><br>
 		
-	
+	<% @test.test1 = s %>
+	<% @test.test2 = "аааааааааа" %>
+	<% @test.test3 = "1111111111" %>
 	<strong>(<%= @test.ib %>)
 	<%= @test.tkat %></strong>
 	<br><br>

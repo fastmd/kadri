@@ -14,3 +14,5 @@
 //= require jquery_ujs
 //= require_tree .
 //= require highcharts
+//= require autotab-jquery
+//= require custom
