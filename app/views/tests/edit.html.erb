@@ -1,7 +1,7 @@
-﻿<style type="text/css">
- <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application"%>
-  
+
+
+<style type="text/css">
+ <%= stylesheet_link_tag    "application", :media => "all" %> 
   <%= csrf_meta_tags %>
 <body>
 
@@ -26,32 +26,24 @@ TD{font-family: Arial; font-size: 10pt;}
 
 </style>
 
+<script>
 
+	$(function () {
+					$('.number').autotab({format: 'numeric', maxlength: 1 });
+				});
+</script>
 
 <!doctype html>
 <head>
     <meta charset="utf-8" />
     <title>PT - test Results</title>
     
-	
-    <script>
-    $(function() {
-        $( "#tabs" ).tabs();
-    });
-    </script>
-</head>
- 
-<html lang="en">
-<head>
+
+
     <meta charset="utf-8" />
     <title>PT - Personal card</title>
     
-    <script type="text/javascript" charset="utf-8">  
-	
-    $(function() {
-        $( "#datepicker" ).datepicker();
-    });
-    </script>
+  
 	
 	<style>
     .column { width: 450px; float: left; }
@@ -92,11 +84,11 @@ TD{font-family: Arial; font-size: 10pt;}
                    with red eyes (for both males and females).">
 		<CAPTION><EM>A test table with merged cells</EM></CAPTION>
 		<TR><TH rowspan="2"><TH colspan="2">Тест 1
-    	<% s = " "%>
+    	<% s1 = " "%>
 		<TR><TH>0<TH>1<TH>2<TH>3<TH>4<TH>5<TH>6<TH>7<TH>8<TH>9
-		<TR><TH>0<TD><TD><%=select_tag(s[0], options_for_select([0,'+','-']))%> 
-			<TD><%=select_tag(s[1], options_for_select([0,'+','-']))%><TD><%=select_tag(s[2], options_for_select([0,'+','-']))%>
-			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
+		<TR><TH>0<TD><TD><%=select_tag(s1[0], options_for_select([0,'+','-']),:class=>"number")%> 
+			<TD><%=select_tag(s1[1], options_for_select([0,'+','-']), :class=>"number")%><TD><%=select_tag(s1[2], options_for_select([0,'+','-']),:class=>"number")%>
+			<TD><%=select_tag(s1[3], options_for_select([0,'+','-']))%><TD><%=select_tag(s1[4], options_for_select([0,'+','-']))%>
 			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
 			<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>	
 		<TR><TH>1<TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%><TD><%=select_tag(@test.tkat, options_for_select([0,'+','-']))%>
@@ -412,9 +404,15 @@ TD{font-family: Arial; font-size: 10pt;}
     <strong>test Date:</strong>
     <%= @test.date %><br><br>
 		
-	<% @test.test1 = s %>
+	<% @test.test1 = s1 %>
 	<% @test.test2 = "аааааааааа" %>
 	<% @test.test3 = "1111111111" %>
+	<% @test.test4 = "1111111111" %>
+	<% @test.test5 = "++++++++++" %>
+	<% @test.test6 = "+++++++++" %>
+	<% @test.test7 = "++++++++++" %>
+	<% @test.test8 = "aaaaaaaaa" %>
+	<% @test.test9 = "+++++++++" %>
 	<strong>(<%= @test.ib %>)
 	<%= @test.tkat %></strong>
 	<br><br>
@@ -441,14 +439,51 @@ TD{font-family: Arial; font-size: 10pt;}
  
   <p>
     <%= f.label :Test1 %><br>
-    <%= f.text_field :test1 %>
+    <%= f.text_field :test1 ,:maxlength => 5, :class=>"number" %>
   </p>
-  
+  <p>
+    <%= f.label :Test2 %><br>
+    <%= f.text_field :test2 ,:maxlength => 5, :class=>"number" %>
+  </p>
+  <p>
+    <%= f.label :Test3 %><br>
+    <%= f.text_field :test3 ,:maxlength => 5, :class=>"number" %>
+  </p>
+  <p>
+    <%= f.label :Test4 %><br>
+    <%= f.text_field :test4 ,:maxlength => 5%>
+  </p>
+  <p>
+    <%= f.label :Test5 %><br>
+    <%= f.text_field :test5 ,:maxlength => 5%>
+  </p>
+  <p>
+    <%= f.label :Test6 %><br>
+    <%= f.text_field :test6 ,:maxlength => 5%>
+  </p>
+  <p>
+    <%= f.label :Test7 %><br>
+    <%= f.text_field :test7 ,:maxlength => 5%>
+  </p>
+  <p>
+    <%= f.label :Test8 %><br>
+    <%= f.text_field :test8 ,:maxlength => 5%>
+  </p>
+  <p>
+    <%= f.label :Test9 %><br>
+    <%= f.text_field :test9 ,:maxlength => 5%>
+  </p>
  
  
   <p>
     <%= f.submit %>
   </p>
+  
+  	<input type="text" id="number1" class="number" maxlength="3" size="3" />
+
+	<input type="text" id="number2" class="number" maxlength="3" size="3" />
+
+	<input type="text" id="number3" class="number" maxlength="4" size="5" />
   
 <% end %>
 	</div>
