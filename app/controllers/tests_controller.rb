@@ -22,6 +22,10 @@ http_basic_authenticate_with :name => "adm", :password => "111", :only => :destr
 	def update
 		@monter = Monter.find(params[:monter_id])
 		@test = @monter.tests.find(params[:id])
+		@test.test1 = "+-+-+-+-+-+-+-";
+		
+		selected_keywords = params[:test1]
+    @test.test1 = selected_keywords.join()
  
 		if @test.update_attributes(params[:test])
 			redirect_to monter_path(@monter)
