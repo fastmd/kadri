@@ -5,7 +5,7 @@ http_basic_authenticate_with :name => "adm", :password => "111", :only => :destr
 
 	def create
 		@monter = Monter.find(params[:monter_id])
-		@test = @monter.tests.create(params[:test])
+		@test = @monter.tests.new(params[:test])
 		redirect_to monter_path(@monter)
 	end
 	
@@ -22,10 +22,25 @@ http_basic_authenticate_with :name => "adm", :password => "111", :only => :destr
 	def update
 		@monter = Monter.find(params[:monter_id])
 		@test = @monter.tests.find(params[:id])
-		@test.test1 = "+-+-+-+-+-+-+-";
 		
 		selected_keywords = params[:test1]
     @test.test1 = selected_keywords.join()
+    selected_keywords = params[:test2]
+    @test.test2 = selected_keywords.join()
+    selected_keywords = params[:test3]
+    @test.test3 = selected_keywords.join()
+    selected_keywords = params[:test4]
+    @test.test4 = selected_keywords.join()
+    selected_keywords = params[:test5]
+    @test.test5 = selected_keywords.join()
+    selected_keywords = params[:test6]
+    @test.test6 = selected_keywords.join()
+    selected_keywords = params[:test7]
+    @test.test7 = selected_keywords.join()
+    selected_keywords = params[:test8]
+    @test.test8 = selected_keywords.join()
+    selected_keywords = params[:test9]
+    @test.test9 = selected_keywords.join()
  
 		if @test.update_attributes(params[:test])
 			redirect_to monter_path(@monter)
