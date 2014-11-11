@@ -12,6 +12,7 @@ http_basic_authenticate_with :name => "adm", :password => "111", :only => :destr
 	def new
 		@monter = Monter.find(params[:monter_id])
 		@test = @monter.tests.create(params[:test])
+		
 		redirect_to monter_path(@monter)
 	end
 	
@@ -79,9 +80,8 @@ http_basic_authenticate_with :name => "adm", :password => "111", :only => :destr
 #	end
 	
 	def show
-	@monter = Monter.find(params[:monter_id])
+	@monter = Monter.find(params[:monter_id]) 
 	@test = @monter.tests.find(params[:id])
-	
 	
 		k1=0
 		k2=0.000

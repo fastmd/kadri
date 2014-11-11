@@ -1,4 +1,15 @@
-
+<script>
+	$(function () { $('.test1').autotab({ format: 'custom', pattern: '[^0,+,-\.]', maxlength: 50  });	
+     				$('.test2').autotab({ format: 'custom', pattern: '[^0,а,б,в,г,д\.]', maxlength: 50 }); 
+					$('.test3').autotab({ format: 'custom', pattern: '[^0,1,2,3,4,5,6,7,8\.]', maxlength: 50 });
+					$('.test4').autotab({ format: 'custom', pattern: '[^0,1,2,3\.]', maxlength: 50 });
+					$('.test5').autotab({ format: 'custom', pattern: '[^0,+,-\.]', maxlength: 50 });
+					$('.test6').autotab({ format: 'custom', pattern: '[^0,+,-\.]', maxlength: 50 });
+					$('.test7').autotab({ format: 'custom', pattern: '[^0,+,-\.]', maxlength: 50 });
+					$('.test8').autotab({ format: 'custom', pattern: '[^a,b,c\.]', maxlength: 50 });
+					$('.test9').autotab({ format: 'custom', pattern: '[^0,+,-\.]', maxlength: 200 });
+				})
+</script>
 
   
 
@@ -24,31 +35,31 @@
 	<%= f.text_field :date,:value => Time.now.strftime('%d.%m.%Y') %> <br>
  
     <%= f.label :test1 %><br>
-    <%= f.text_area :test1, :rows => 3, :style=>"width:80%" %><br>
+    <%= f.text_area :test1, :rows => 3, :style=>"width:80%", :class => "test1" %><br>
   
     <%= f.label :test2 %><br>
-    <%= f.text_area :test2, :rows => 3, :style=>"width:80%" %><br>
+    <%= f.text_area :test2, :rows => 3, :style=>"width:80%", :class => "test2" %><br>
   
     <%= f.label :test3 %><br>
-    <%= f.text_area :test3, :rows => 3, :style=>"width:80%" %><br>
+    <%= f.text_area :test3, :rows => 3, :style=>"width:80%", :class => "test3" %><br>
   
     <%= f.label :test4 %><br>
-    <%= f.text_area :test4, :rows => 3, :style=>"width:80%" %><br>
+    <%= f.text_area :test4, :rows => 3, :style=>"width:80%", :class => "test4" %><br>
 
     <%= f.label :test5 %><br>
-    <%= f.text_area :test5, :rows => 3, :style=>"width:80%" %><br>
+    <%= f.text_area :test5, :rows => 3, :style=>"width:80%", :class => "test5" %><br>
   
     <%= f.label :test6 %><br>
-    <%= f.text_area :test6, :rows => 3, :style=>"width:80%" %><br>
+    <%= f.text_area :test6, :rows => 3, :style=>"width:80%", :class => "test6" %><br>
   
     <%= f.label :test7 %><br>
-    <%= f.text_area :test7 ,:rows => 3, :style=>"width:80%"%><br>
+    <%= f.text_area :test7 ,:rows => 3, :style=>"width:80%", :class => "test7"%><br>
   
     <%= f.label :test8 %><br>
-    <%= f.text_area :test8,:rows => 3, :style=>"width:80%"%><br>
+    <%= f.text_area :test8,:rows => 3, :style=>"width:80%", :class => "test8"%><br>
   
     <%= f.label :test9 %><br>
-	<%= f.text_area :test9,  :rows =>3 , :style=>"width:80%" %><br>
+	<%= f.text_area :test9,  :rows =>3 , :style=>"width:80%", :class => "test9" %><br>
   </p>
   
  
