@@ -31,12 +31,6 @@ TD{font-family: Arial; font-size: 10pt;}
     <meta charset="utf-8" />
     <title>PT - test Results</title>
     
-	
-    <script>
-    $(function() {
-        $( "#tabs" ).tabs();
-    });
-    </script>
 </head>
  
 <html lang="en">
@@ -44,13 +38,7 @@ TD{font-family: Arial; font-size: 10pt;}
     <meta charset="utf-8" />
     <title>PT - Personal card</title>
     
-    <script type="text/javascript" charset="utf-8">  
-	
-    $(function() {
-        $( "#datepicker" ).datepicker();
-    });
-    </script>
-	
+    
 	<style>
     .column { width: 450px; float: left; }
     .portlet { margin: 0 1em 1em 0; }
@@ -66,11 +54,20 @@ TD{font-family: Arial; font-size: 10pt;}
 
 </head>
 <body>
+	
+<% if @test.errors.any? %>
+    <div class="error_messages">
+      <h2><%= pluralize(@test.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <ul>
+      <% @test.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>	
 
 <div id="left">
 <td><%= link_to 'Back',monter_path(@monter)%></td>
-
-
 
 </div>
 

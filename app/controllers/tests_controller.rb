@@ -12,7 +12,6 @@ http_basic_authenticate_with :name => "adm", :password => "111", :only => :destr
 	def new
 		@monter = Monter.find(params[:monter_id])
 		@test = @monter.tests.create(params[:test])
-		
 		redirect_to monter_path(@monter)
 	end
 	
@@ -88,7 +87,8 @@ http_basic_authenticate_with :name => "adm", :password => "111", :only => :destr
 		k3=0.00
 		t1 = "+--++----+---+--++-+--+-++-+---+---++--------++-+-"
 		counter=0
-		for i in 0..@test.test1.size-1
+		i=0
+		for i in 0..@test.test1.to_s.size-1
 			counter = counter + 1	
 			if @test.test1[i] == t1[i]
 			 k1 += 1
@@ -102,8 +102,9 @@ http_basic_authenticate_with :name => "adm", :password => "111", :only => :destr
 		k4 = 0
 		k5 = 0
 		k6 = 0
+		i1 = 0
 		t2="вбагбгвагвагвавбгбвбабаввбвгбв"
-		for i1 in 0..@test.test2.size-1
+		for i1 in 0..@test.test2.to_s.size-1
 			if (@test.test2[i1] == t2[i1])
 			 k4 += 1
 			end
@@ -117,7 +118,7 @@ http_basic_authenticate_with :name => "adm", :password => "111", :only => :destr
 		k8 = 0
 		k9 = 0
 		t3="451263621345261213564345823874517612343786541253768215241635"
-		for i1 in 0..@test.test3.size-1
+		for i1 in 0..@test.test3.to_s.size-1
 			if (@test.test3[i1] == t3[i1])
 			 k7 += 1
 			end
@@ -134,7 +135,7 @@ http_basic_authenticate_with :name => "adm", :password => "111", :only => :destr
 		k11 = 0
 		k12 = 0
 		t4="2213223323232312132321332313213213132312123131132321211212212132123131"
-		for i1 in 0..@test.test4.size-1
+		for i1 in 0..@test.test4.to_s.size-1
 		 if (@test.test4[i1] == ' ')
 		   break;
 		 end	
@@ -154,7 +155,7 @@ http_basic_authenticate_with :name => "adm", :password => "111", :only => :destr
 		mk5 = [0,0,0,0]
 		t5="+++++++++++++++++-++++++-++++++++-+-++++++++++-+++-+++++-+-+++-+++-+++++++++++++++++++++++++++++++++++++++-+++++++++++++++-++++-++++++"
 		t51="32112312323213121213131133233231322222132333131232122331312112332123223113232133111233232233313211233123111222321133123211112232213111";
-		for i1 in 0..@test.test5.size-1
+		for i1 in 0..@test.test5.to_s.size-1
 		  
 			index = t51[i1].to_i - 1
 			if (@test.test5[i1] == t5[i1])
@@ -168,13 +169,17 @@ http_basic_authenticate_with :name => "adm", :password => "111", :only => :destr
 		@test.rawbal13 = mk5[0]
 		@test.rawbal14 = mk5[1]
 		@test.rawbal15 = mk5[2]
-		@test.rawbal16 = (mk5[0]/mk5[1].to_f).round(3)
+		if (mk5[1] != 0)
+		  @test.rawbal16 = (mk5[0]/mk5[1].to_f).round(3)
+		else
+		  @test.rawbal16 = 0
+		end    
 		
 		
 		mk6 = [0,0,0,0,0,0,0,0,0,0]
 		t6="++++-++++++-++++++++++++-+++++-++++-+++++++++-++++-+-+++++-+++++-+++++++++++++++++++++++"
 		t61=[1,2,3,4,5,6,7,8,9,10,1,2,3,4,2,5,4,6,7,8,9,7,1,2,3,4,5,6,7,8,9,10,1,2,3,4,2,5,4,6,7,8,9,7,1,2,3,4,5,6,7,8,9,10,1,2,3,4,2,5,4,6,7,8,9,7,1,2,3,4,5,6,7,8,9,10,1,2,3,4,2,5,4,6,7,8,9,7];
-		for i1 in 0..@test.test6.size-1
+		for i1 in 0..@test.test6.to_s.size-1
 			index = t61[i1].to_i - 1
 			if (@test.test6[i1] == t6[i1])
 			 mk6[index.to_i] += 1
@@ -196,7 +201,7 @@ http_basic_authenticate_with :name => "adm", :password => "111", :only => :destr
 		
 		k27 = 0
 		
-		for i1 in 0..@test.test7.size-1
+		for i1 in 0..@test.test7.to_s.size-1
 			if (@test.test7[i1] == '+')
 			 k27 += 1
 			end
@@ -204,8 +209,10 @@ http_basic_authenticate_with :name => "adm", :password => "111", :only => :destr
 		
 		@test.rawbal27 = k27
 		
-		str = @test.test8
+		str = @test.test8.to_s
 		k28 = 0
+		if (str.size > 0)  
+		
 		if ((@test.test8[0] == 'a')||(@test.test8[0] == 'c'))
 			 k28 += 1
 			end
@@ -297,13 +304,13 @@ http_basic_authenticate_with :name => "adm", :password => "111", :only => :destr
 			 k28 += 1
 			end		
 			
-		
+		end
 		@test.rawbal28 = k28
 		
 		k29=0
 		t9=" ++++-++++  -++++- -++  -++++++-+   -+-- +"
 		
-		for i1 in 0..@test.test9.size-1
+		for i1 in 0..@test.test9.to_s.size-1
 			if (@test.test9[i1] == t9[i1])
 			 k29 += 1
 			end
@@ -318,7 +325,10 @@ http_basic_authenticate_with :name => "adm", :password => "111", :only => :destr
 	msum1t5 = [12,29,-32,37,41,48,49,50,-63,-67,69,73,-74,81,-86,-87,90,91,92,95,97,-105,118,-122,-123,-127,-130]
 	msum2t5 = [-9,-24,25,-40,45,-47,-57,-69,-78,82,-85,-94,-105,-110,124,-127]
 
-    str = @test.test5
+    str = @test.test5.to_s
+    i=0
+    fsum1 = 0
+  if (str.size > 0)  
 	for i in 0..16 
         if (msum2t5[i].to_i > 0)
             if ((str[msum2t5[i].to_i-1] == '+') )
@@ -344,12 +354,12 @@ http_basic_authenticate_with :name => "adm", :password => "111", :only => :destr
     end
   end 
   
-		
+end		
 
   msum1t6 = [-7,14,19,-26,-28,-31,-33,37,-53,-54,57,59,61,67,72,-73,74,-77,79]
   msum2t6 = [-6,-9,10,-11,-19,-25,37]
 
-  str =  @test.test6
+  str =  @test.test6.to_s
  for i in 0..7 
   if ( msum2t6[i].to_i > 0 )
     if (str[msum2t6[i].to_i-1] == '+')
@@ -379,7 +389,7 @@ http_basic_authenticate_with :name => "adm", :password => "111", :only => :destr
   msum1t7 = [1,9,14,18,-22]
   msum2t7 = [10,12,13,15,22]
 
- str =  @test.test7;
+ str =  @test.test7.to_s;
  for i in 0..5
    if ( msum2t7[i].to_i > 0 )
       if (str[msum2t7[i].to_i-1] == '+')
@@ -409,7 +419,7 @@ http_basic_authenticate_with :name => "adm", :password => "111", :only => :destr
   msum1t9 = [15,16,-18,20,26,-27,-33,36,37,38]
   msum2t9 = [-2,6,-7,-14,17,20,31,-33,-37]
 
- str = @test.test9;
+ str = @test.test9.to_s;
  for i in 0..9 
    if ( msum2t9[i].to_i > 0 )
       if (str[msum2t9[i].to_i-1] == '+')

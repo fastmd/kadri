@@ -16,19 +16,6 @@
 
 <%= form_for([@monter, @monter.tests.build]) do |f| %>
 
-	<% if @monter.errors.any? %>
-  <div id="errorExplanation">
-    <h2><%= pluralize(@monter.errors.count, "error") %> prohibited this monter from being saved:</h2>
-    <ul>
-    <% @monter.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-  <% end %>
-
-
-
   <p>
     
     <%= f.label :date %><br >
