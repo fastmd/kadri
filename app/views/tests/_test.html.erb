@@ -5,7 +5,7 @@
  
 
 				
-				<th>Testing date:</th>
+				<th>Дата :</th>
 				<th>ИБ:</th>
 				<th>ПВ:</th>
 				<th>ЛМ:</th>
@@ -23,11 +23,11 @@
 	  <td><%= test.b2 %></td>
 	  <td><%= test.b3 %></td>
 	  
-    <td><%= link_to 'Show',[test.monter, test],:action=>:show %></td>
-    <td><%= link_to 'Input' ,[:edit,test.monter, test] %></td>
-	<td><%= link_to 'Calc',[test.monter, test],:action=>:show %></td>
-	<td><%= link_to 'Destroy Test', [test.monter, test],
-               :confirm => 'Are you sure?',
+    <td><%= link_to 'Результаты',[test.monter, test],:action=>:show %></td>
+    <td><%= link_to 'Изменить' ,[:edit,test.monter, test] %></td>
+	<td><%= link_to 'Расчитать',[test.monter, test],:action=>:show %></td>
+	<td><%= link_to 'Удалить', [test.monter, test],
+               :confirm => 'Вы уверенны?',
                :method => :delete %></td>		   
   </tr>
   

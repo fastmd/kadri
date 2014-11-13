@@ -1,43 +1,67 @@
-<%= link_to 'Back', :action => :index %>
-  
-	<h2>Respondent's Data</h2>
+<style>
+
+#left, #center, #right {border:#CCC 1px solid; padding:10px 20px;}
+
+
+#left {float:left; width:250px;}
+
+
+#right {float:right; width:350px;}
+
+
+#center {float:left; margin:5px; width:800px;}
+
+TD{font-family: Arial; font-size: 10pt;}
+
+</style>
+
+
+<div id="left">
+	<%= link_to 'Назад к списку респондентов', :action => :index %>
+</div>	
+<div id="center">  
+	<center><h2>Информация о респонденте</h2></center>
 <%= form_for :monter, :url => { :action => :create } do |f| %>  
 
   <p>
-    <%= f.label :Company %><br>
+    <center>Предприятие   
     <%= f.select :company, options_for_select([["ME", "ME"]]) %>
+    </center>
   </p>
  
   <p>
-    <%= f.label :Branch %><br>
+    <center>Филиал
     <%= f.select :branch, options_for_select([["NORD-VEST", "NORD-VEST"], ["NORD", "NORD"], ["CENTRU", "CENTRU"], ["SUD", "SUD"]]) %><br>
+    </center>
   </p>
   
   <p>
-    <%= f.label :Name %><br>
-    <%= f.text_field :name %>
+    <center><%= f.label :"Имя" %>
+    <%= f.text_field :name %></center>
   </p>
   
   <p>
-    <%= f.label :Surname %><br>
+    <center>Фамилия
     <%= f.text_field :surname %>
+    </center>
   </p>
   
   <p>
-    <%= f.label :"Birthday data"%><br>
+    <center>Дата рождения
     <%= f.text_field :bdate %>
+    </center>
   </p>
   
   <p>
-    <%= f.label :Role %><br>
+    <center>Должность
     <%= f.text_field :dolj %>
+    </center>
   </p>
  
   <p>
-    <%= f.submit("Save Respondent") %>
+    <center><%= f.submit("Сохранить данные респондента") %></center>
   </p>
   
 <% end %>
-
-
+</div>
 

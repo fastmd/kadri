@@ -77,23 +77,23 @@ function rowClick()
 		
 </script>
 
-<%= link_to 'EXIT', :controller => :welcome %>
+<%= link_to 'Выход', :controller => :welcome %>
 
-<h1>Listing Respondents</h1>
- <%= link_to 'New respondents', :action => :new %>
+<center><h1>Список респондентов</h1></center>
+ <%= link_to 'Добавить респондента', :action => :new %>
 
  <table id="table1">
   <thead>
   <tr>
-    <th>Company</th>
-    <th>Branch</th>
-	<th>Name</th>
-	<th>Surname</th>
-	<th>Birthday date</th>
-	<th>Role</th>
-    <th>Action</th>
-    <th>Action</th>
-	<th>Action</th>
+    <th>Предприятие</th>
+    <th>Филиал</th>
+	<th>Имя</th>
+	<th>Фамилия</th>
+	<th>Дата рождения</th>
+	<th>Должность</th>
+    <th>Действие</th>
+    <th>Действие</th>
+	<th>Действие</th>
   </tr>
   </thead>
   
@@ -106,9 +106,9 @@ function rowClick()
 	  <td><%= monter.surname %></td>
 	  <td><%= monter.bdate %></td>
 	  <td><%= monter.dolj %></td>
-    <td><%= link_to 'Show',:action => :show, :id => monter.id %></td>
-    <td><%= link_to 'Edit',:action => :edit, :id => monter.id %></td>
-	<td><%= link_to 'Destroy', { :action => :destroy, :id => monter.id }, :method => :delete, :confirm => 'Are you sure?' %></td>  
+    <td><%= link_to 'Данные',:action => :show, :id => monter.id %></td>
+    <td><%= link_to 'Редактировать',:action => :edit, :id => monter.id %></td>
+	<td><%= link_to 'Удалить', { :action => :destroy, :id => monter.id }, :method => :delete, :confirm => 'Вы уверенны?' %></td>  
   </tr>
 <% end %>
 </tbody>
