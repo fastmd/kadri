@@ -79,27 +79,24 @@ TD{font-family: Arial; font-size: 10pt;}
 	<center><h3>Отдел кадров и социального развития.</h3></center>
 	<br>
 	<center> Филиал	:	<%=@monter.branch %></center>
-	<center> Фамилия :	<%=@monter.surname %></center>
-	<center> Имя : 	<%=@monter.name %></center>
-	<center> Дата рождения : 	<%=@monter.bdate %></center>
+	<center> Фамилия :	<strong><%=@monter.surname %></strong></center>
+	<center> Имя : 	<strong><%=@monter.name %></strong></center>
+	<center> Дата рождения : 	<strong><%=@monter.bdate %></strong></center>
 	<center>Дата тестирования: 	<%= @test.date %></center><br>
-  </div>
+  
    
-	<div id="tabs-1">
-	<div style="font-size: 14px;  font: Areal">
-	<div class="header">	
+	
+	<div style="font-size: 16px;  font: Areal">
+		
     
-	<div style="color : #00CCCC">
-    
-	</div><br>
-	<center><h3>Заключение </h3></center>
-	<center><strong>о профессиональной пригодности</strong></center> <br>
+	<center><h2>Заключение </h2></center>
+	<center><h3><strong>о профессиональной пригодности</strong></h3></center> <br>
 	<br>
 	
 	<strong>(<%= @test.ib %>)
 	<%= @test.tkat %></strong><br>
 	<br>
-	<center><strong>Основания для заключения</strong></center> 	<br>
+	<center><h3>Основания для заключения</h3></center> 	<br>
 	<p>
 	(<%= @test.b1 %>)
 	<%= @test.tb1 %><br><br>
@@ -110,8 +107,13 @@ TD{font-family: Arial; font-size: 10pt;}
 	</p>
 	</div>
 	<br><br>	
-	<br>
+	<br><br>
+	<p>Психолог : </p>
+	<p>Таламбуца Д.                 _________________________ </p>
+	<p>Испытуемый	: </p> <%=@monter.surname %>  <%=@monter.name %>               _________________________ </p>
 	</div>
+	
+    </div>
     </div>
 	
 	

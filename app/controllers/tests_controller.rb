@@ -89,6 +89,9 @@ http_basic_authenticate_with :name => "adm", :password => "111", :only => :destr
 		counter=0
 		i=0
 		for i in 0..@test.test1.to_s.size-1
+		  if (@test.test1[i] == '0')
+       break;
+     end  
 			counter = counter + 1	
 			if @test.test1[i] == t1[i]
 			 k1 += 1
@@ -96,7 +99,7 @@ http_basic_authenticate_with :name => "adm", :password => "111", :only => :destr
 		end
 		
 		@test.rawbal1 = k1
-		@test.rawbal2 = (k1/(i+1).to_f).round(3)
+		@test.rawbal2 = (k1/(i).to_f).round(2)
 		@test.rawbal3 = ((i+1)*0.02.to_f).round(2)
 		
 		k4 = 0
@@ -105,14 +108,18 @@ http_basic_authenticate_with :name => "adm", :password => "111", :only => :destr
 		i1 = 0
 		t2="вбагбгвагвагвавбгбвбабаввбвгбв"
 		for i1 in 0..@test.test2.to_s.size-1
+		  if (@test.test2[i1] == '0')
+       break;
+     end  
 			if (@test.test2[i1] == t2[i1])
 			 k4 += 1
 			end
 		end
 		
 		@test.rawbal4 = k4
-		@test.rawbal5 = (k4/(i1+1).to_f).round(3)
-		@test.rawbal6 = (((i1+1)/30).to_f).round(3)
+		tk4 = i1+1
+		@test.rawbal5 = (k4/tk4.to_f).round(2)
+		@test.rawbal6 = (i1/28.to_f).round(2)
 		
 		k7 = 0
 		k8 = 0
@@ -122,7 +129,7 @@ http_basic_authenticate_with :name => "adm", :password => "111", :only => :destr
 			if (@test.test3[i1] == t3[i1])
 			 k7 += 1
 			end
-			if (@test.test3[i1] == ' ')
+			if (@test.test3[i1] == '0')
 			 break
 			end
 		end
@@ -136,7 +143,7 @@ http_basic_authenticate_with :name => "adm", :password => "111", :only => :destr
 		k12 = 0
 		t4="2213223323232312132321332313213213132312123131132321211212212132123131"
 		for i1 in 0..@test.test4.to_s.size-1
-		 if (@test.test4[i1] == ' ')
+		 if (@test.test4[i1] == '0')
 		   break;
 		 end	
 			if (@test.test4[i1] == t4[i1])
@@ -145,7 +152,7 @@ http_basic_authenticate_with :name => "adm", :password => "111", :only => :destr
 		end
 		
 		@test.rawbal10 = k10
-		@test.rawbal11 = (k10/(i1+1).to_f).round
+		@test.rawbal11 = (k10/(i1).to_f).round
 		@test.rawbal12 = ((i1+1)/70.to_f).round
 		
 		k13 = 0
@@ -170,7 +177,7 @@ http_basic_authenticate_with :name => "adm", :password => "111", :only => :destr
 		@test.rawbal14 = mk5[1]
 		@test.rawbal15 = mk5[2]
 		if (mk5[1] != 0)
-		  @test.rawbal16 = (mk5[0]/mk5[1].to_f).round(3)
+		  @test.rawbal16 = (mk5[0]/mk5[1].to_f).round(2)
 		else
 		  @test.rawbal16 = 0
 		end    
@@ -572,7 +579,7 @@ maskbal = [[57.781,61.122,64.462,67.802,71.143,74.483,77.823,81.164,84.504,86.17
 	maskb4 = [[39.589,45.795,52.002,58.208,64.414,70.62,76.826,83.032,89.239,92.342],[0.523,0.623,0.723,0.823,0.923,1.022,1.122,1.222,1.322,1.371],
 			[-2.348,0.458,3.263,6.069,8.874,11.68,14.485,17.291,20.097,21.499],[-4.322,-0.625,3.072,6.768,10.465,14.162,17.858,21.555,25.252,27.1],
 			[2.573,4.359,6.145,7.931,9.716,11.502,13.288,15.074,16.859,17.752]]
-if (@test.rawbal14 > 0)			
+#if (@test.rawbal14 > 0)			
 	tt = @test.rawbal14
 				for i in 0..10
 					if (tt.to_f < maskb4[0][i].to_f)
@@ -583,8 +590,10 @@ if (@test.rawbal14 > 0)
 							b3 += 10
 							break
 					end
-				end
-elsif (@test.rawbal16 > 0) 
+				end			          
+#end 
+					
+#if (@test.rawbal16 > 0) 
 	tt = @test.rawbal16
 				for i in 0..10
 					if (tt.to_f < maskb4[1][i].to_f)
@@ -595,8 +604,10 @@ elsif (@test.rawbal16 > 0)
 							b3 += 1
 							break
 					end		
-				end
-elsif (@test.rawbal24 > 0)  				
+				end          
+#end 
+				
+#if (@test.rawbal24 > 0)  				
 	tt = @test.rawbal24
 				for i in 0..10
 					if (tt.to_f < maskb4[2][i].to_f)
@@ -608,7 +619,9 @@ elsif (@test.rawbal24 > 0)
 							break
 					end		
 				end	
-elsif	 (@test.rawbal26 > 0)  
+#end 
+				
+#if	 (@test.rawbal26 > 0)  
 	tt = @test.rawbal26
 				for i in 0..10
 					if (tt.to_f < maskb4[3][i].to_f)
@@ -620,7 +633,9 @@ elsif	 (@test.rawbal26 > 0)
 							break
 					end		
 				end
-elsif	(@test.rawbal28 > 0)  			
+#end 
+				
+if	(@test.rawbal28 > 0)  			
 	tt = @test.rawbal28
 				for i in 0..10
 					if (tt.to_f < maskb4[4][i].to_f)
@@ -632,8 +647,6 @@ elsif	(@test.rawbal28 > 0)
 							break
 					end		
 				end
-else
-  tt = 0					
 end	
 	for i in 0..10
 		if (b3.to_f < maskbal[3][i].to_f)
@@ -821,26 +834,28 @@ end
 	
 	
 	for i in 0..10
-		if (bal1.to_f < maskbal[0][i].to_f)
+		if (bal1 < maskbal[0][i])
 			@test.ib  = i+1
 			break
 		end
-		if (bal1.to_f > maskbal[0][9].to_f)	
+		if (bal1 > maskbal[0][9])	
 			@test.ib  = 10
 			break
 		end
 	end	
-	
-	bal1 = @test.ib
 #	@test.ib = bal1
 	
+#	bal1 = @test.ib
+#	@test.ib = bal1
+#
 #	if (( bal1 > 7 and((@test.b1 < 5)or(@test.b2 < 5)or(@test.b3 < 5))))
-#	@test.ib = 7
-#	elsif ((bal1 > 5)&&((@test.b1 < 4)||(@test.b2 < 4)||(@test.b3 < 4)))
-#	@test.ib = 5
-#	else ((bal1 > 5)&&(((@test.b1 < 4)&&(@test.b2 < 4))||((@test.b1 < 4)&&(@test.b3 < 4))||((@test.b2 < 4)&&(@test.b3 < 4))))
-#	@test.ib = 4
+#	   @test.ib = 7
+#	if ((bal1 > 5)&&((@test.b1 < 4)or(@test.b2 < 4)or(@test.b3 < 4)))
+#	   @test.ib = 5
+#	if ((bal1 > 5)&&(((@test.b1 < 4)&&(@test.b2 < 4))or((@test.b1 < 4)and(@test.b3 < 4))or((@test.b2 < 4)&&(@test.b3 < 4))))
+#	   @test.ib = 4
 #	end
+	
 	
 	
 	if @test.ib.to_i < 4

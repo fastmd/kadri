@@ -41,7 +41,7 @@ TD{font-family: Arial; font-size: 10pt;}
 					$('.test5').autotab({ format: 'custom', pattern: '[^0,+,-\.]', maxlength: 1 });
 					$('.test6').autotab({ format: 'custom', pattern: '[^0,+,-\.]', maxlength: 1 });
 					$('.test7').autotab({ format: 'custom', pattern: '[^0,+,-\.]', maxlength: 1 });
-					$('.test8').autotab({ format: 'custom', pattern: '[^a,b,c\.]', maxlength: 1 });
+					$('.test8').autotab({ format: 'custom', pattern: '[^0,a,b,c\.]', maxlength: 1 });
 					$('.test9').autotab({ format: 'custom', pattern: '[^0,+,-\.]', maxlength: 1 });
 			});
 </script>
@@ -217,26 +217,30 @@ TD{font-family: Arial; font-size: 10pt;}
    <br><br>
    <%= "ТЕСТ 5 - Допустимые значения ответов ( 0 , + , - )" %><br>	
    <% if @test.test5 %>
-  	<% for i in 0..70 %>
+  	<% for i in 0..133 %>
   	<% s = @test.test5[i]%>
   	<% if i<10 %>
-  		<%= "0"+i.to_s%>
+  		<%= "00"+i.to_s%>
+  	<% elsif i<100 %>
+  		<%= "0"+i.to_s%>		
   	<% else %>
   		<%= i%>
   	<% end %>
-  	 <input id="1" name="test5[]" type="text" style="width: 12px; padding: 3px; 
+  	 <input id="1" name="test5[]" type="text" style="width: 13px; padding: 3px; 
   	 background-color :white; border: solid 1px; color:purple;" value="<%= s %>"  class="test5" />
       <% i = i+1 %>  	    
    <% end %>
    <% else %>
-     <% for i in 0..70 %>
+     <% for i in 0..133 %>
      <% s = ""%>
      <% if i<10 %>
-  		<%= "0"+i.to_s%>
+  		<%= "00"+i.to_s%>
+  	<% elsif i<100 %>
+  		<%= "0"+i.to_s%>	
   	<% else %>
   		<%= i%>
   	<% end %>
-  	 	<input id="1" name="test5[]" type="text" style="width: 12px; padding: 3px; 
+  	 	<input id="1" name="test5[]" type="text" style="width: 13px; padding: 3px; 
   	 	background-color :white; border: solid 1px; color:purple;" value="<% s %>"  class="test5" />
       	<% i = i+1 %> 	
    <% end %>
@@ -244,7 +248,7 @@ TD{font-family: Arial; font-size: 10pt;}
    <br><br>
    <%= "ТЕСТ 6 - Допустимые значения ответов ( 0 , + , - )" %><br>
    <% if @test.test6 %>	
-  	<% for i in 0..70 %>
+  	<% for i in 0..87 %>
   	<% s = @test.test6[i]%>
   	<% if i<10 %>
   		<%= "0"+i.to_s%>
@@ -256,7 +260,7 @@ TD{font-family: Arial; font-size: 10pt;}
       <% i = i+1 %>  	    
    <% end %>
    <% else %>
-     <% for i in 0..70 %>
+     <% for i in 0..87 %>
      <% s = ""%>
      <% if i<10 %>
   		<%= "0"+i.to_s%>
@@ -271,7 +275,7 @@ TD{font-family: Arial; font-size: 10pt;}
    <br><br>
    <%= "ТЕСТ 7 - Допустимые значения ответов ( 0 , + , - )" %><br>
    <% if @test.test7 %>	
-  	<% for i in 0..70 %>
+  	<% for i in 0..24 %>
   	<% s = @test.test7[i]%>
   	<% if i<10 %>
   		<%= "0"+i.to_s%>
@@ -283,7 +287,7 @@ TD{font-family: Arial; font-size: 10pt;}
       <% i = i+1 %>  	    
    <% end %>
    <% else %>
-     <% for i in 0..70 %>
+     <% for i in 0..24 %>
      <% s = ""%>
      <% if i<10 %>
   		<%= "0"+i.to_s%>
@@ -298,7 +302,7 @@ TD{font-family: Arial; font-size: 10pt;}
    <br><br>
    <%= "ТЕСТ 8 - Допустимые значения ответов ( 0 , a , b , c )" %><br>	
    <% if @test.test8 %>
-  	<% for i in 0..70 %>
+  	<% for i in 0..29 %>
   	<% s = @test.test8[i]%>
   	<% if i<10 %>
   		<%= "0"+i.to_s%>
@@ -310,7 +314,7 @@ TD{font-family: Arial; font-size: 10pt;}
       <% i = i+1 %>  	    
    <% end %>
    <% else %>
-     <% for i in 0..70 %>
+     <% for i in 0..29 %>
      <% s = ""%>
      <% if i<10 %>
   		<%= "0"+i.to_s%>
@@ -325,7 +329,7 @@ TD{font-family: Arial; font-size: 10pt;}
    <br><br>
    <%= "ТЕСТ 9 - Допустимые значения ответов ( 0 , + , - )" %><br>
    <% if @test.test9 %>	
-  	<% for i in 0..70 %>
+  	<% for i in 0..40 %>
   	<% s = @test.test9[i]%>
   	<% if i<10 %>
   		<%= "0"+i.to_s%>
@@ -337,7 +341,7 @@ TD{font-family: Arial; font-size: 10pt;}
       <% i = i+1 %>  	    
    <% end %>
    <% else %>
-     <% for i in 0..70 %>
+     <% for i in 0..40 %>
      <% s = ""%>
      <% if i<10 %>
   		<%= "0"+i.to_s%>
