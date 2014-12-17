@@ -109,10 +109,10 @@ TD{font-family: Arial; font-size: 10pt;}
   <% if @test.test1 %>	
   	<% for i in 0..50 %>
   		<% s = @test.test1[i]%>
-  	<% if i<10 %>
-  		<%= "0"+i.to_s%>
+  	<% if i<9 %>
+  		<%= "0"+(i+1).to_s%>
   	<% else %>
-  		<%= i%>
+  		<%= i+1 %>
   	<% end %>		  	
   	 	<input id="1" name="test1[]" type="text" style="width: 12px; padding: 3px; 
   	 	background-color :white; border: solid 1px; color:purple;" value="<%= s %>"  class="test1" />
@@ -122,10 +122,10 @@ TD{font-family: Arial; font-size: 10pt;}
    <% else %>
    <% s = ""%>
      <% for i in 0..50 %>
-     <% if i<10 %>
-  		<%= "0"+i.to_s%>
+     <% if i<9 %>
+  		<%= "0"+(i+1).to_s%>
   	<% else %>
-  		<%= i%>
+  		<%= i+1 %>
   	<% end %>
   	 	<input id="1" name="test1[]" type="text" style="width: 12px; padding: 3px; 
   	 	background-color :white; border: solid 1px; color:purple;" value="<% s %>"  class="test1" />
@@ -137,10 +137,10 @@ TD{font-family: Arial; font-size: 10pt;}
    <% if @test.test2 %>	
   	<% for i in 0..30 %>
   	<% s = @test.test2[i]%>
-  	<% if i<10 %>
-  		<%= "0"+i.to_s%>
+  	<% if i<9 %>
+  		<%= "0"+(i+1).to_s%>
   	<% else %>
-  		<%= i%>
+  		<%= i+1 %>
   	<% end %>		
   	 <input id="1" name="test2[]" type="text" style="width: 12px; padding: 3px; 
   	 background-color :white; border: solid 1px; color:purple;" value="<%= s %>"  class="test2" id="test2"/>
@@ -150,9 +150,9 @@ TD{font-family: Arial; font-size: 10pt;}
      <% for i in 0..30 %>
      <% s = ""%>
      <% if i<10 %>
-  		<%= "0"+i.to_s%>
+  		<%= "0"+(i+1).to_s%>
   	<% else %>
-  		<%= i%>
+  		<%= i+1 %>
   	<% end %>
   	 	<input id="1" name="test2[]" type="text" style="width: 12px; padding: 3px; 
   	 	background-color :white; border: solid 1px; color:purple;" value="<% s %>"  class="test2" id="test2" />
@@ -165,10 +165,10 @@ TD{font-family: Arial; font-size: 10pt;}
    <% if @test.test3 %>	
   	<% for i in 0..60 %>
   	<% s = @test.test3[i]%>
-  	<% if i<10 %>
-  		<%= "0"+i.to_s%>
+  	<% if i<9 %>
+  		<%= "0"+(i+1).to_s%>
   	<% else %>
-  		<%= i%>
+  		<%= i+1 %>
   	<% end %>
   	 <input id="1" name="test3[]" type="text" style="width: 12px; padding: 3px; 
   	 background-color :white; border: solid 1px; color:purple;" value="<%= s %>"  class="test3" />
@@ -177,10 +177,10 @@ TD{font-family: Arial; font-size: 10pt;}
    <% else %>
      <% for i in 0..60 %>
      <% s = ""%>
-     <% if i<10 %>
-  		<%= "0"+i.to_s%>
+     <% if i<9 %>
+  		<%= "0"+(i+1).to_s%>
   	<% else %>
-  		<%= i%>
+  		<%= i+1%>
   	<% end %>
   	 	<input id="1" name="test3[]" type="text" style="width: 12px; padding: 3px; 
   	 	background-color :white; border: solid 1px; color:purple;" value="<% s %>"  class="test3" />
@@ -192,10 +192,10 @@ TD{font-family: Arial; font-size: 10pt;}
    <% if @test.test4 %>
   	<% for i in 0..70 %>
   	<% s = @test.test4[i]%>
-  	<% if i<10 %>
-  		<%= "0"+i.to_s%>
+  	<% if i<9 %>
+  		<%= "0"+(i+1).to_s%>
   	<% else %>
-  		<%= i%>
+  		<%= i+1%>
   	<% end %>
   	 <input id="1" name="test4[]" type="text" style="width: 12px; padding: 3px; 
   	 background-color :white; border: solid 1px; color:purple;" value="<%= s %>"  class="test4" />
@@ -204,10 +204,10 @@ TD{font-family: Arial; font-size: 10pt;}
    <% else %>
      <% for i in 0..70 %>
      <% s = ""%>
-     <% if i<10 %>
-  		<%= "0"+i.to_s%>
+     <% if i<9 %>
+  		<%= "0"+(i+1).to_s%>
   	<% else %>
-  		<%= i%>
+  		<%= i+1 %>
   	<% end %>
   	 	<input id="1" name="test4[]" type="text" style="width: 12px; padding: 3px; 
   	 	background-color :white; border: solid 1px; color:purple;" value="<% s %>"  class="test4" />
@@ -219,12 +219,12 @@ TD{font-family: Arial; font-size: 10pt;}
    <% if @test.test5 %>
   	<% for i in 0..133 %>
   	<% s = @test.test5[i]%>
-  	<% if i<10 %>
-  		<%= "00"+i.to_s%>
-  	<% elsif i<100 %>
-  		<%= "0"+i.to_s%>		
+  	<% if i<9 %>
+  		<%= "00"+(i+1).to_s%>
+  	<% elsif i<99 %>
+  		<%= "0"+(i+1).to_s%>		
   	<% else %>
-  		<%= i%>
+  		<%= i+1%>
   	<% end %>
   	 <input id="1" name="test5[]" type="text" style="width: 13px; padding: 3px; 
   	 background-color :white; border: solid 1px; color:purple;" value="<%= s %>"  class="test5" />
@@ -233,12 +233,12 @@ TD{font-family: Arial; font-size: 10pt;}
    <% else %>
      <% for i in 0..133 %>
      <% s = ""%>
-     <% if i<10 %>
-  		<%= "00"+i.to_s%>
-  	<% elsif i<100 %>
-  		<%= "0"+i.to_s%>	
+     <% if i<9 %>
+  		<%= "00"+(i+1).to_s%>
+  	<% elsif i<99 %>
+  		<%= "0"+(i+1).to_s%>	
   	<% else %>
-  		<%= i%>
+  		<%= i+1%>
   	<% end %>
   	 	<input id="1" name="test5[]" type="text" style="width: 13px; padding: 3px; 
   	 	background-color :white; border: solid 1px; color:purple;" value="<% s %>"  class="test5" />
@@ -250,10 +250,10 @@ TD{font-family: Arial; font-size: 10pt;}
    <% if @test.test6 %>	
   	<% for i in 0..87 %>
   	<% s = @test.test6[i]%>
-  	<% if i<10 %>
-  		<%= "0"+i.to_s%>
+  	<% if i<9 %>
+  		<%= "0"+(i+1).to_s%>
   	<% else %>
-  		<%= i%>
+  		<%= i+1%>
   	<% end %>
   	 <input id="1" name="test6[]" type="text" style="width: 12px; padding: 3px; 
   	 background-color :white; border: solid 1px; color:purple;" value="<%= s %>"  class="test6" />
@@ -262,10 +262,10 @@ TD{font-family: Arial; font-size: 10pt;}
    <% else %>
      <% for i in 0..87 %>
      <% s = ""%>
-     <% if i<10 %>
-  		<%= "0"+i.to_s%>
+     <% if i<9 %>
+  		<%= "0"+(i+1).to_s%>
   	<% else %>
-  		<%= i%>
+  		<%= i+1%>
   	<% end %>
   	 	<input id="1" name="test6[]" type="text" style="width: 12px; padding: 3px; 
   	 	background-color :white; border: solid 1px; color:purple;" value="<% s %>"  class="test6" />
@@ -277,10 +277,10 @@ TD{font-family: Arial; font-size: 10pt;}
    <% if @test.test7 %>	
   	<% for i in 0..24 %>
   	<% s = @test.test7[i]%>
-  	<% if i<10 %>
-  		<%= "0"+i.to_s%>
+  	<% if i<9 %>
+  		<%= "0"+(i+1).to_s%>
   	<% else %>
-  		<%= i%>
+  		<%= i+1 %>
   	<% end %>
   	 <input id="1" name="test7[]" type="text" style="width: 12px; padding: 3px; 
   	 background-color :white; border: solid 1px; color:purple;" value="<%= s %>"  class="test7" />
@@ -289,10 +289,10 @@ TD{font-family: Arial; font-size: 10pt;}
    <% else %>
      <% for i in 0..24 %>
      <% s = ""%>
-     <% if i<10 %>
-  		<%= "0"+i.to_s%>
+     <% if i<9 %>
+  		<%= "0"+(i+1).to_s%>
   	<% else %>
-  		<%= i%>
+  		<%= i+1 %>
   	<% end %>
   	 	<input id="1" name="test7[]" type="text" style="width: 12px; padding: 3px; 
   	 	background-color :white; border: solid 1px; color:purple;" value="<% s %>"  class="test7" />
@@ -304,10 +304,10 @@ TD{font-family: Arial; font-size: 10pt;}
    <% if @test.test8 %>
   	<% for i in 0..29 %>
   	<% s = @test.test8[i]%>
-  	<% if i<10 %>
-  		<%= "0"+i.to_s%>
+  	<% if i<9 %>
+  		<%= "0"+(i+1).to_s%>
   	<% else %>
-  		<%= i%>
+  		<%= i+1 %>
   	<% end %>
   	 <input id="1" name="test8[]" type="text" style="width: 12px; padding: 3px; 
   	 background-color :white; border: solid 1px; color:purple;" value="<%= s %>"  class="test8" />
@@ -316,10 +316,10 @@ TD{font-family: Arial; font-size: 10pt;}
    <% else %>
      <% for i in 0..29 %>
      <% s = ""%>
-     <% if i<10 %>
-  		<%= "0"+i.to_s%>
+     <% if i<9 %>
+  		<%= "0"+(i+1).to_s%>
   	<% else %>
-  		<%= i%>
+  		<%= i+1 %>
   	<% end %>
   	 	<input id="1" name="test8[]" type="text" style="width: 12px; padding: 3px; 
   	 	background-color :white; border: solid 1px; color:purple;" value="<% s %>"  class="test8" />
@@ -331,10 +331,10 @@ TD{font-family: Arial; font-size: 10pt;}
    <% if @test.test9 %>	
   	<% for i in 0..40 %>
   	<% s = @test.test9[i]%>
-  	<% if i<10 %>
-  		<%= "0"+i.to_s%>
+  	<% if i<9 %>
+  		<%= "0"+(i+1).to_s%>
   	<% else %>
-  		<%= i%>
+  		<%= i+1 %>
   	<% end %>
   	 <input id="1" name="test9[]" type="text" style="width: 12px; padding: 3px; 
   	 background-color :white; border: solid 1px; color:purple;" value="<%= s %>"  class="test9" />
@@ -343,10 +343,10 @@ TD{font-family: Arial; font-size: 10pt;}
    <% else %>
      <% for i in 0..40 %>
      <% s = ""%>
-     <% if i<10 %>
-  		<%= "0"+i.to_s%>
+     <% if i<9 %>
+  		<%= "0"+(i+1).to_s%>
   	<% else %>
-  		<%= i%>
+  		<%= i+1 %>
   	<% end %>
   	 	<input id="1" name="test9[]" type="text" style="width: 12px; padding: 3px; 
   	 	background-color :white; border: solid 1px; color:purple;" value="<% s %>"  class="test9" />
