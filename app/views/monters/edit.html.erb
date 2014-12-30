@@ -21,7 +21,7 @@ TD{font-family: Arial; font-size: 10pt;}
 </div>
 
 <div id="center">
-<center><h2>Редактирование информации о респонденте</h2></center>
+<center><h2>Редактирование данных респондента</h2></center>
 
 <%= form_for :monter, :url => { :action => :update, :id => @monter.id },
 :method => :put do |f| %>
@@ -53,7 +53,7 @@ TD{font-family: Arial; font-size: 10pt;}
   
   <p>
     <%= f.label :"Должность :" %>
-    <%= f.text_field :dolj %>
+    <%= f.select :dolj, options_for_select([["Электромонтер ОВБ", "Электромонтер ОВБ"], ["Водитель ОВБ", "Водитель ОВБ"], ["ЭОП", "ЭОП"]]) %><br>
   </p>
  </center>
   <p>

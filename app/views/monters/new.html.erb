@@ -15,12 +15,25 @@ TD{font-family: Arial; font-size: 10pt;}
 
 </style>
 
+<script>
+	  
+		$.ajax({
+    success:function(){
+        //your stuff
+       $("#modelname").datepicker({ dateFormat: "dd.mm.yy" });
+     }
+ });
+  
+			
+</script>
+
+
 
 <div id="left">
 	<%= link_to 'Назад к списку респондентов', :action => :index %>
 </div>	
 <div id="center">  
-	<center><h2>Информация о респонденте</h2></center>
+	<center><h2>Ввод данных респондента</h2></center>
 <%= form_for :monter, :url => { :action => :create } do |f| %>  
 
   <p>
@@ -48,13 +61,13 @@ TD{font-family: Arial; font-size: 10pt;}
   
   <p>
     <center>Дата рождения
-    <%= f.text_field :bdate %>
+    <%= f.text_field :bdate,:value => Time.now.strftime('%d.%m.%Y'),:id => "modelname" %>
     </center>
   </p>
   
   <p>
     <center>Должность
-    <%= f.text_field :dolj %>
+    <%= f.select :dolj, options_for_select([["Электромонтер ОВБ", "Электромонтер ОВБ"], ["Водитель ОВБ", "Водитель ОВБ"], ["ЭОП", "ЭОП"]]) %><br>    	
     </center>
   </p>
  
